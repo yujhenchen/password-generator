@@ -145,10 +145,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [x] Generate random passwords
 - [x] Allow password lengths within a given range (8 to 15, auto reset if the value is out of range)
 - [x] Show ellipsis when there is text overflow
+- [x] Copy on click
 - [ ] Toggle mode light/ dark
 - [ ] Toggle symbols on/ off
 - [ ] Toggle numbers on/ off
-- [ ] Copy on click
 - [ ] Refactor
     - [ ] Create a UnoCSS class file to load class names
     - [ ] Move out event handler functions
@@ -227,6 +227,7 @@ Project Link: [https://github.com/yujhenchen/password-generator](https://github.
 * [How to create a toggle switch with CSS](https://www.educative.io/answers/how-to-create-a-toggle-switch-with-css)
 * [HTML vs Body: How to Set Width and Height for Full Page Size](https://www.freecodecamp.org/news/html-page-width-height/)
 * [Simple CSS3 Toggle Switch Button](https://www.htmllion.com/css3-toggle-switch-button.html)
+* [How to Copy Text to the Clipboard with JavaScript](https://www.freecodecamp.org/news/copy-text-to-clipboard-javascript/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

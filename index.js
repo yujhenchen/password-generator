@@ -40,10 +40,27 @@ GeneratePasswordsBtn.addEventListener("click", () => {
   render();
 });
 
+passwordFirst.addEventListener("click", async (event) => {
+  await clickAndCopy(event.target.innerHTML);
+});
+
+passwordSecond.addEventListener("click", async (event) => {
+  await clickAndCopy(event.target.innerHTML);
+});
+
 function getRandomElementsFromArray(arr, num) {
   const shuffled = arr.sort(() => 0.5 - Math.random());
-  const elementsArray = shuffled.slice(0, num);
-  return elementsArray;
+  const elements = shuffled.slice(0, num).join("");
+  return elements;
+}
+
+async function clickAndCopy(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    console.log(`"Content copied to clipboard: ${text}`);
+  } catch (err) {
+    console.error(`Failed to copy: ${err}`);
+  }
 }
 
 function render() {
