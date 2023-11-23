@@ -143,8 +143,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [x] Use UnoCSS
 - [x] Generate random passwords
-- [ ] Toggle mode light/ dark
 - [x] Allow password lengths within a given range (8 to 15, auto reset if the value is out of range)
+- [x] Show ellipsis when there is text overflow
+- [ ] Toggle mode light/ dark
 - [ ] Toggle symbols on/ off
 - [ ] Toggle numbers on/ off
 - [ ] Copy on click
