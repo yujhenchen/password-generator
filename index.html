@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@unocss/reset/normalize.min.css"
+    />
   </head>
-  <body>
+  <body class="m-0 p-0 bg-base-dark">
     <main>
       <section id="light-dark-mode-toggle-section">
         <span>Dark Mode</span>
@@ -43,5 +48,28 @@
       </section>
     </main>
     <script src="index.js" type="module"></script>
+    <!-- define unocss options... -->
+    <script>
+      window.__unocss = {
+        // rules: [
+        //   // custom rules...
+        // ],
+        // presets: [
+        //   // custom presets...
+        // ],
+        // // ...
+        theme: {
+          // ...
+          colors: {
+            baseDark: "#1C1C1C",
+            // brand: {
+            //   primary: "hsl(var(--hue 217) 78% / 51%)", //class="bg-brand-primary"
+            // },
+          },
+        },
+      };
+    </script>
+    <!-- ... and then load the runtime -->
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
   </body>
 </html>
