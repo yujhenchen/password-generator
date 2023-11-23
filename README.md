@@ -86,6 +86,7 @@ My solo project - Password Generator (from The Frontend Developer Career Path of
 * [![JavaScript]][JavaScript]
 * [![CSS3]][CSS3]
 * [![HTML5]][HTML5]
+* [![UnoCSS][UnoCSS]][UnoCSS-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -158,10 +159,16 @@ See the [open issues](https://github.com/yujhenchen/password-generator/issues) f
 <!-- ISSUES AND SOLUTIONS -->
 ## Issues and solutions
 
-### Issue Name
+### After setting layout of `body` to be `flex`, the hight of `body` becomes the same as its content
 
 #### Solution
-
+Set the minimum height of html and body
+```
+html,
+body {
+  min-height: 100vh;
+}
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -207,6 +214,7 @@ Project Link: [https://github.com/yujhenchen/password-generator](https://github.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 * [How to create a toggle switch with CSS](https://www.educative.io/answers/how-to-create-a-toggle-switch-with-css)
+* [HTML vs Body: How to Set Width and Height for Full Page Size](https://www.freecodecamp.org/news/html-page-width-height/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -228,6 +236,8 @@ Project Link: [https://github.com/yujhenchen/password-generator](https://github.
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
-[JavaScript]: https://img.shields.io/badge/logo-javascript-blue?logo=javascript
-[CSS3]: https://img.shields.io/badge/logo-css3-blue?logo=css3
-[HTML5]: https://img.shields.io/badge/logo-html5-blue?logo=html5
+[JavaScript]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
+[CSS3]: https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white
+[HTML5]: https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
+[UnoCSS]:https://img.shields.io/badge/unocss-333333.svg?style=for-the-badge&logo=unocss&logoColor=white
+[UnoCSS-url]: https://unocss.dev/
