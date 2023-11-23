@@ -5,8 +5,10 @@ import { characters } from "./constants.js";
 
 const passwordLengthInput = document.getElementById("password-length-input");
 const GeneratePasswordsBtn = document.getElementById("generate-passwords-btn");
-const passwordFirst = document.getElementById("password-first");
-const passwordSecond = document.getElementById("password-second");
+const passwordBlocks = document.querySelectorAll(
+  "div[class*='password-block']"
+);
+const passwordCopiedToast = document.getElementById("pop-up-toast");
 
 const pwdSet = Object.preventExtensions({
   first: "",
@@ -39,13 +41,17 @@ GeneratePasswordsBtn.addEventListener("click", () => {
   }
   render();
 });
+console.log(passwordBlocks);
+passwordBlocks.forEach((block) => {
+  block.addEventListener("click", async (event) => {
+    await clickAndCopy(event.target.innerHTML);
 
-passwordFirst.addEventListener("click", async (event) => {
-  await clickAndCopy(event.target.innerHTML);
-});
-
-passwordSecond.addEventListener("click", async (event) => {
-  await clickAndCopy(event.target.innerHTML);
+    const cursor = {
+      x: event.clientX,
+      y: event.clientY,
+    };
+    showPasswordCopiedToast(cursor);
+  });
 });
 
 function getRandomElementsFromArray(arr, num) {
@@ -54,18 +60,28 @@ function getRandomElementsFromArray(arr, num) {
   return elements;
 }
 
+function showPasswordCopiedToast(cursor) {
+  const { x, y } = cursor;
+  passwordCopiedToast.style.top = y + 20 + "px";
+  passwordCopiedToast.style.left = x + 20 + "px";
+  render();
+}
+
 async function clickAndCopy(text) {
   try {
     await navigator.clipboard.writeText(text);
-    console.log(`"Content copied to clipboard: ${text}`);
+    console.log(`Password copied to clipboard: ${text}`);
   } catch (err) {
     console.error(`Failed to copy: ${err}`);
   }
 }
 
 function render() {
-  passwordFirst.textContent = pwdSet.first;
-  passwordSecond.textContent = pwdSet.second;
+  let count = 0;
+  for (const property in pwdSet) {
+    passwordBlocks[count].textContent = pwdSet[property];
+    count++;
+  }
   passwordLengthInput.value = passwordLength;
 }
 

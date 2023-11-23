@@ -119,18 +119,25 @@
           class="text-16px flex place-content-around text-center py-16px"
         >
           <div
-            class="bg-brand-green-heavy text-brand-green-semi-light w-192px h-32px pwd-div-style rounded-6px"
+            class="bg-brand-green-heavy text-brand-green-semi-light w-192px h-32px pwd-div-style rounded-6px password-block"
           >
-            <span id="password-first">pwd1</span>
+            pwd1
           </div>
           <div
-            class="bg-brand-green-heavy text-brand-green-semi-light w-192px h-32px pwd-div-style rounded-6px"
+            class="bg-brand-green-heavy text-brand-green-semi-light w-192px h-32px pwd-div-style rounded-6px password-block"
           >
-            <span id="password-second">pwd2</span>
+            pwd2
           </div>
         </section>
       </section>
     </main>
+
+    <div
+      id="pop-up-toast"
+      class="absolute p-16px rounded-6px shadow-lg -top-9999px -left-9999px font-medium bg-brand-green-light text-brand-green-heavy"
+    >
+      Password copied to clipboard!
+    </div>
     <script src="index.js" type="module"></script>
     <script src="./unoCSS.config.js"></script>
     <!-- ... and then load the runtime -->

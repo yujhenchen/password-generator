@@ -32,7 +32,8 @@ button {
   border: none;
 }
 
-span {
+span,
+.password-block {
   vertical-align: middle;
   /* overflow text shows ... */
   overflow: hidden;
