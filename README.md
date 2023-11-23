@@ -141,7 +141,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Use UnoCSS
+- [x] Use UnoCSS
 - [ ] Toggle mode light/ dark
 - [x] Allow password lengths within a given range (8 to 15, auto reset if the value is out of range)
 - [ ] Toggle symbols on/ off
