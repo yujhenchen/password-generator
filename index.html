@@ -10,6 +10,20 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@unocss/reset/normalize.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@800&family=Orbitron:wght@600&family=Outfit&family=Ysabeau:wght@1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="bg-brand-dark flex place-content-center items-center">
     <main
@@ -17,13 +31,17 @@
     >
       <section
         id="light-dark-mode-toggle-section"
-        class="dark:text-brand-coco-medium text-brand-coco-heavy flex place-content-end"
+        class="dark:text-brand-coco-medium text-brand-coco-heavy flex place-content-end items-center"
       >
         <span>Dark Mode</span>
-        <input type="checkbox" id="toggle-light-dark" />
-        <label for="toggle-light-dark"></label>
+        <label class="switch" for="toggle-light-dark">
+          <input class="switch-input" type="checkbox" id="toggle-light-dark" />
+          <span class="switch-label" data-on="On" data-off="Off"></span>
+          <span class="switch-handle"></span>
+        </label>
         <span>Light Mode</span>
       </section>
+
       <section>
         <h1 class="dark:text-brand-white text-brand-night text-40px">
           Generate a<br /><span
@@ -34,7 +52,8 @@
         <h2 class="dark:text-brand-coco-medium text-brand-coco-heavy text-20px">
           Never use an insecure password again.
         </h2>
-        <section class="text-[16px] flex flex-col py-16px">
+
+        <section class="text-[16px] flex flex-col py-16px space-y-8px">
           <div>
             <span class="dark:text-brand-coco-medium text-brand-coco-heavy"
               >Length of password <span>(8 to 15 characters)</span></span
@@ -43,29 +62,59 @@
             <label for="password-length"></label>
           </div>
 
-          <div>
-            <span class="dark:text-brand-coco-medium text-brand-coco-heavy"
-              >With symbols</span
+          <div class="flex w-full space-x-8px">
+            <div
+              class="dark:text-brand-coco-medium text-brand-coco-heavy flex items-center"
             >
-            <input type="checkbox" id="toggle-symbols" />
-            <label for="toggle-symbols"></label>
-          </div>
+              <span class="dark:text-brand-coco-medium text-brand-coco-heavy"
+                >With symbols</span
+              >
+              <!-- <input type="checkbox" id="toggle-symbols" />
+            <label for="toggle-symbols"></label> -->
+              <label class="switch" for="toggle-symbols">
+                <input
+                  class="switch-input"
+                  type="checkbox"
+                  id="toggle-symbols"
+                />
+                <span class="switch-label" data-on="On" data-off="Off"></span>
+                <span class="switch-handle"></span>
+              </label>
+            </div>
 
-          <div>
-            <span class="dark:text-brand-coco-medium text-brand-coco-heavy"
-              >With numbers</span
+            <div
+              class="dark:text-brand-coco-medium text-brand-coco-heavy flex items-center"
             >
-            <input type="checkbox" id="toggle-numbers" />
-            <label for="toggle-numbers"></label>
+              <span class="dark:text-brand-coco-medium text-brand-coco-heavy"
+                >With numbers</span
+              >
+              <!-- <input type="checkbox" id="toggle-numbers" />
+            <label for="toggle-numbers"></label> -->
+              <label class="switch" for="toggle-numbers">
+                <input
+                  class="switch-input"
+                  type="checkbox"
+                  id="toggle-numbers"
+                />
+                <span class="switch-label" data-on="On" data-off="Off"></span>
+                <span class="switch-handle"></span>
+              </label>
+            </div>
           </div>
         </section>
-        <button
-          class="bg-brand-green-regular text-white text-16px py-9px px-16px rounded-6px text-center"
-        >
-          Generate passwords
-        </button>
+
+        <div class="flex w-full place-content-center">
+          <button
+            class="bg-brand-green-regular text-white text-16px py-9px px-16px rounded-6px text-center"
+          >
+            Generate passwords
+          </button>
+        </div>
+
         <hr class="dark:bg-brand-green-semi-heavy h-1px w-446px" />
-        <section class="text-16px flex place-content-around text-center">
+        <section
+          class="text-16px flex place-content-around text-center py-16px"
+        >
           <div
             class="bg-brand-green-heavy text-brand-green-semi-light w-192px h-32px pwd-div-style rounded-6px"
           >

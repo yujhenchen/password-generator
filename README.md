@@ -215,7 +215,7 @@ Project Link: [https://github.com/yujhenchen/password-generator](https://github.
 ## Acknowledgments
 * [How to create a toggle switch with CSS](https://www.educative.io/answers/how-to-create-a-toggle-switch-with-css)
 * [HTML vs Body: How to Set Width and Height for Full Page Size](https://www.freecodecamp.org/news/html-page-width-height/)
-
+* [Simple CSS3 Toggle Switch Button](https://www.htmllion.com/css3-toggle-switch-button.html)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
