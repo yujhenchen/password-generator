@@ -141,14 +141,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Use UnoCSS
-- [] Toggle mode light/ dark
-- [] Allow password lengths within a given range
-- [] Toggle symbols on/ off
-- [] Toggle numbers on/ off
-- [] Copy on click
-- [] Refactor
-    - [] Test
+- [ ] Use UnoCSS
+- [ ] Toggle mode light/ dark
+- [ ] Allow password lengths within a given range
+- [ ] Toggle symbols on/ off
+- [ ] Toggle numbers on/ off
+- [ ] Copy on click
+- [ ] Refactor
+    - [ ] Create a UnoCSS class file to load class names
     
 See the [open issues](https://github.com/yujhenchen/password-generator/issues) for a full list of proposed features (and known issues).
 

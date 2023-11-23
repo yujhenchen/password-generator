@@ -11,8 +11,10 @@
       href="https://cdn.jsdelivr.net/npm/@unocss/reset/normalize.min.css"
     />
   </head>
-  <body class="m-0 p-20 bg-brand-dark">
-    <main class="bg-brand-green-very-very-light dark:bg-brand-green-very-heavy">
+  <body class="bg-brand-dark flex place-content-center items-center">
+    <main
+      class="bg-brand-green-very-very-light dark:bg-brand-green-very-heavy h-550px w-550px"
+    >
       <section
         id="light-dark-mode-toggle-section"
         class="dark:text-brand-coco-medium text-brand-coco-heavy"
@@ -23,16 +25,16 @@
         <span>Light Mode</span>
       </section>
       <section>
-        <h1 class="dark:text-brand-white text-brand-night">
-          Generate a<span
+        <h1 class="dark:text-brand-white text-brand-night text-40px">
+          Generate a<br /><span
             class="dark:text-brand-green-light text-brand-green-regular"
             >random password</span
           >
         </h1>
-        <h2 class="dark:text-brand-coco-medium text-brand-coco-heavy">
+        <h2 class="dark:text-brand-coco-medium text-brand-coco-heavy text-20px">
           Never use an insecure password again.
         </h2>
-        <div>
+        <section class="text-[16px] flex flex-col py-16px">
           <div>
             <span class="dark:text-brand-coco-medium text-brand-coco-heavy"
               >Length of password <span>(8 to 15 characters)</span></span
@@ -56,18 +58,25 @@
             <input type="checkbox" id="toggle-numbers" />
             <label for="toggle-numbers"></label>
           </div>
-        </div>
-        <button class="bg-brand-green-regular text-white">
+        </section>
+        <button
+          class="bg-brand-green-regular text-white text-16px py-9px px-16px rounded-6px text-center"
+        >
           Generate passwords
         </button>
-        <div>
-          <div class="bg-brand-green-heavy text-brand-green-semi-light">
-            pwd1
+        <hr class="dark:bg-brand-green-semi-heavy h-1px w-446px" />
+        <section class="text-16px flex place-content-around text-center">
+          <div
+            class="bg-brand-green-heavy text-brand-green-semi-light w-192px h-32px pwd-div-style rounded-6px"
+          >
+            <span>pwd1</span>
           </div>
-          <div class="bg-brand-green-heavy text-brand-green-semi-light">
-            pwd2
+          <div
+            class="bg-brand-green-heavy text-brand-green-semi-light w-192px h-32px pwd-div-style rounded-6px"
+          >
+            <span>pwd2</span>
           </div>
-        </div>
+        </section>
       </section>
     </main>
     <script src="index.js" type="module"></script>
