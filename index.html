@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- <html lang="en" class="dark"> -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,10 +12,10 @@
     />
   </head>
   <body class="m-0 p-20 bg-brand-dark">
-    <main class="bg-brand-green-very-heavy">
+    <main class="bg-brand-green-very-very-light dark:bg-brand-green-very-heavy">
       <section
         id="light-dark-mode-toggle-section"
-        class="text-brand-coco-medium"
+        class="dark:text-brand-coco-medium text-brand-coco-heavy"
       >
         <span>Dark Mode</span>
         <input type="checkbox" id="toggle-light-dark" />
@@ -22,15 +23,18 @@
         <span>Light Mode</span>
       </section>
       <section>
-        <h1 class="text-brand-white">
-          Generate a<span class="text-brand-green-light">random password</span>
+        <h1 class="dark:text-brand-white text-brand-night">
+          Generate a<span
+            class="dark:text-brand-green-light text-brand-green-regular"
+            >random password</span
+          >
         </h1>
-        <h2 class="text-brand-coco-medium">
+        <h2 class="dark:text-brand-coco-medium text-brand-coco-heavy">
           Never use an insecure password again.
         </h2>
         <div>
           <div>
-            <span class="text-brand-coco-medium"
+            <span class="dark:text-brand-coco-medium text-brand-coco-heavy"
               >Length of password <span>(8 to 15 characters)</span></span
             >
             <input type="text" id="password-length" />
@@ -38,18 +42,24 @@
           </div>
 
           <div>
-            <span class="text-brand-coco-medium">With symbols</span>
+            <span class="dark:text-brand-coco-medium text-brand-coco-heavy"
+              >With symbols</span
+            >
             <input type="checkbox" id="toggle-symbols" />
             <label for="toggle-symbols"></label>
           </div>
 
           <div>
-            <span class="text-brand-coco-medium">With numbers</span>
+            <span class="dark:text-brand-coco-medium text-brand-coco-heavy"
+              >With numbers</span
+            >
             <input type="checkbox" id="toggle-numbers" />
             <label for="toggle-numbers"></label>
           </div>
         </div>
-        <button class="bg-brand-green-regular">Generate passwords</button>
+        <button class="bg-brand-green-regular text-white">
+          Generate passwords
+        </button>
         <div>
           <div class="bg-brand-green-heavy text-brand-green-semi-light">
             pwd1

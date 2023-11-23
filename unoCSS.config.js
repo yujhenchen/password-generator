@@ -10,9 +10,8 @@ window.__unocss = {
     // ...
     colors: {
       brand: {
-        night: "",
-        white: "",
-        mediumGray: "",
+        night: "rgb(0 0 0)",
+        white: "rgb(255 255 255)",
         dark: "#1C1C1C",
         green: {
           veryHeavy: "#1F2937",
@@ -22,9 +21,9 @@ window.__unocss = {
           light: "#4ADF86",
           semiLight: "#55F991",
           veryLight: "#5DEF92",
+          veryVeryLight: "#ECFDF5",
         },
         coco: {
-          light: "#ECFDF5",
           medium: "#D5D4D8",
           heavy: "#6B7280",
         },
