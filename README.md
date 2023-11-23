@@ -142,6 +142,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [x] Use UnoCSS
+- [x] Generate random passwords
 - [ ] Toggle mode light/ dark
 - [x] Allow password lengths within a given range (8 to 15, auto reset if the value is out of range)
 - [ ] Toggle symbols on/ off
@@ -149,6 +150,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Copy on click
 - [ ] Refactor
     - [ ] Create a UnoCSS class file to load class names
+    - [ ] Move out event handler functions
     
 See the [open issues](https://github.com/yujhenchen/password-generator/issues) for a full list of proposed features (and known issues).
 
