@@ -17,8 +17,11 @@ let passwordLength = PASSWORD_LENGTH.MIN;
 
 passwordLengthInput.addEventListener("input", (event) => {
   const value = event.target.value;
-  if (isNaN(value)) passwordLength = PASSWORD_LENGTH.MIN;
-  //   render();
+  if (isNaN(value)) {
+    passwordLength = PASSWORD_LENGTH.MIN;
+    passwordLengthInput.value = "";
+  } else passwordLength = value;
+  render();
 });
 
 passwordLengthInput.addEventListener("focusout", (event) => {
