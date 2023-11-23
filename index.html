@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <section id="light-dark-mode-toggle-section">
+        <span>Dark Mode</span>
+        <input type="checkbox" id="toggle-light-dark"/>
+        <label for="toggle-light-dark"></label>
+        <span>Light Mode</span>
+      </section>
+      <section>
+        <h1>Generate a<span>random password</span></h1>
+        <h2>Never use an insecure password again.</span></h2>
+        <div>
+            <div>
+                <span>Length of password <span>(8 to 15 characters)</span></span>
+                <input type="text" id="password-length"/>
+                <label for="password-length"></label>
+            </div>
+            
+            <div>
+                <span>With symbols</span>
+                <input type="checkbox" id="toggle-symbols"/>
+                <label for="toggle-symbols"></label>
+            </div>
+            
+            <div>
+                <span>With numbers</span>
+                <input type="checkbox" id="toggle-numbers"/>
+                <label for="toggle-numbers"></label>
+            </div>
+
+        </div>
+        <button>Generate passwords</button>
+        <div>
+            <div>pwd1</div>
+            <div>pwd2</div>
+        </div>
+      </section>
+    </main>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

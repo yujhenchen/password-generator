@@ -140,7 +140,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Test
+- [] Toggle mode light/ dark
+- [] Allow password lengths within a given range
+- [] Toggle symbols on/ off
+- [] Toggle numbers on/ off
+- [] Copy on click
+- [] Refactor
     - [] Test
     
 See the [open issues](https://github.com/yujhenchen/password-generator/issues) for a full list of proposed features (and known issues).
@@ -200,7 +205,7 @@ Project Link: [https://github.com/yujhenchen/password-generator](https://github.
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-* [Display Name](https://url)
+* [How to create a toggle switch with CSS](https://www.educative.io/answers/how-to-create-a-toggle-switch-with-css)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
