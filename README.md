@@ -170,6 +170,14 @@ body {
 }
 ```
 
+### Refreshing page CSS styles do not apply immediately
+Same as reported 
+https://github.com/unocss/unocss/issues/2435
+
+#### Solution
+Have not found a solution yet.
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
