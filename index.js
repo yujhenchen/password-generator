@@ -41,7 +41,7 @@ GeneratePasswordsBtn.addEventListener("click", () => {
   }
   render();
 });
-console.log(passwordBlocks);
+
 passwordBlocks.forEach((block) => {
   block.addEventListener("click", async (event) => {
     await clickAndCopy(event.target.innerHTML);
