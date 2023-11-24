@@ -5,6 +5,18 @@ export const PASSWORD_LENGTH = Object.freeze({
   MAX: 15,
 });
 
+export const POPUP_TOAST_POSITION = Object.freeze({
+  show: 20,
+  hide: -999,
+});
+
+export const POPUP_DISPLAY_TIME = 1500;
+
+export const PASSWORD_COPIED_RESULT_MESSAGE = Object.freeze({
+  SUCCEED: "Password copied to clipboard",
+  FAILED: "Failed to copy",
+});
+
 export const characters = [
   "A",
   "B",

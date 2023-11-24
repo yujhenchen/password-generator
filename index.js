@@ -1,7 +1,13 @@
 "use strict";
 
-import { PASSWORD_LENGTH } from "./constants.js";
+import {
+  PASSWORD_LENGTH,
+  POPUP_TOAST_POSITION,
+  POPUP_DISPLAY_TIME,
+  PASSWORD_COPIED_RESULT_MESSAGE,
+} from "./constants.js";
 import { characters } from "./constants.js";
+import { getRandomElementsFromArray } from "./helper.js";
 
 const passwordLengthInput = document.getElementById("password-length-input");
 const GeneratePasswordsBtn = document.getElementById("generate-passwords-btn");
@@ -54,25 +60,36 @@ passwordBlocks.forEach((block) => {
   });
 });
 
-function getRandomElementsFromArray(arr, num) {
-  const shuffled = arr.sort(() => 0.5 - Math.random());
-  const elements = shuffled.slice(0, num).join("");
-  return elements;
+let toastTimerID = -1;
+function showPasswordCopiedToast(cursor) {
+  if (toastTimerID) clearTimeout(toastTimerID);
+  setPasswordCopiedToastPosition(cursor, true);
+
+  toastTimerID = setTimeout(
+    () => setPasswordCopiedToastPosition(cursor, false),
+    POPUP_DISPLAY_TIME
+  );
 }
 
-function showPasswordCopiedToast(cursor) {
-  const { x, y } = cursor;
-  passwordCopiedToast.style.top = y + 20 + "px";
-  passwordCopiedToast.style.left = x + 20 + "px";
+function setPasswordCopiedToastPosition(cursor, show) {
+  const unit = "px";
+  if (show) {
+    const { x, y } = cursor;
+    passwordCopiedToast.style.top = `${x + POPUP_TOAST_POSITION.show}${unit}`;
+    passwordCopiedToast.style.left = `${y + POPUP_TOAST_POSITION.show}${unit}`;
+  } else {
+    passwordCopiedToast.style.top =
+      passwordCopiedToast.style.left = `${POPUP_TOAST_POSITION.hide}${unit}`;
+  }
   render();
 }
 
 async function clickAndCopy(text) {
   try {
     await navigator.clipboard.writeText(text);
-    console.log(`Password copied to clipboard: ${text}`);
+    console.log(`${PASSWORD_COPIED_RESULT_MESSAGE.SUCCEED}: ${text}`);
   } catch (err) {
-    console.error(`Failed to copy: ${err}`);
+    console.error(`${PASSWORD_COPIED_RESULT_MESSAGE.FAILED}: ${err}`);
   }
 }
 

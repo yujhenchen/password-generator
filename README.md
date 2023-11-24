@@ -146,6 +146,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [x] Allow password lengths within a given range (8 to 15, auto reset if the value is out of range)
 - [x] Show ellipsis when there is text overflow
 - [x] Copy on click
+- [x] Added toast to notify that the password has been copied to the clipboard (`setTimeout` and `clearTimeout` to control the display of the toast)
 - [ ] Toggle mode light/ dark
 - [ ] Toggle symbols on/ off
 - [ ] Toggle numbers on/ off
