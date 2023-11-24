@@ -17,6 +17,11 @@ export const PASSWORD_COPIED_RESULT_MESSAGE = Object.freeze({
   FAILED: "Failed to copy",
 });
 
+export const Theme = {
+  Dark: "dark",
+  Light: "light",
+};
+
 export const characters = [
   "A",
   "B",

@@ -87,6 +87,7 @@ My solo project - Password Generator (from The Frontend Developer Career Path of
 * [![CSS3]][CSS3]
 * [![HTML5]][HTML5]
 * [![UnoCSS][UnoCSS]][UnoCSS-url]
+* [![FontAwesome][FontAwesome]][FontAwesome-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -141,13 +142,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
+- [x] Use Font Awesome for button icons
 - [x] Use UnoCSS
 - [x] Generate random passwords
 - [x] Allow password lengths within a given range (8 to 15, auto reset if the value is out of range)
 - [x] Show ellipsis when there is text overflow
 - [x] Copy on click
 - [x] Added toast to notify that the password has been copied to the clipboard (`setTimeout` and `clearTimeout` to control the display of the toast)
-- [ ] Toggle mode light/ dark
+- [ ] Toggle mode light/ dark theme, store in the localStorage
 - [ ] Toggle symbols on/ off
 - [ ] Toggle numbers on/ off
 - [ ] Refactor
@@ -229,6 +231,7 @@ Project Link: [https://github.com/yujhenchen/password-generator](https://github.
 * [HTML vs Body: How to Set Width and Height for Full Page Size](https://www.freecodecamp.org/news/html-page-width-height/)
 * [Simple CSS3 Toggle Switch Button](https://www.htmllion.com/css3-toggle-switch-button.html)
 * [How to Copy Text to the Clipboard with JavaScript](https://www.freecodecamp.org/news/copy-text-to-clipboard-javascript/)
+* [The best light/dark mode theme toggle in JavaScript](https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -254,3 +257,5 @@ Project Link: [https://github.com/yujhenchen/password-generator](https://github.
 [HTML5]: https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
 [UnoCSS]:https://img.shields.io/badge/unocss-333333.svg?style=for-the-badge&logo=unocss&logoColor=white
 [UnoCSS-url]: https://unocss.dev/
+[FontAwesome]: https://a11ybadges.com/badge?logo=fontawesome
+[FontAwesome-url]: https://fontawesome.com/
