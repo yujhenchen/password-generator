@@ -5,6 +5,7 @@ import {
   POPUP_TOAST_POSITION,
   POPUP_DISPLAY_TIME,
   PASSWORD_COPIED_RESULT_MESSAGE,
+  Theme,
 } from "./constants.js";
 import { characters } from "./constants.js";
 import { getRandomElementsFromArray } from "./helper.js";
@@ -15,13 +16,44 @@ const passwordBlocks = document.querySelectorAll(
   "div[class*='password-block']"
 );
 const passwordCopiedToast = document.getElementById("pop-up-toast");
+const themeToggle = document.querySelector("#toggle-light-dark");
+const symbolsToggle = document.querySelector("#toggle-symbols");
+const numbersToggle = document.querySelector("#toggle-numbers");
 
 const pwdSet = Object.preventExtensions({
   first: "",
   second: "",
 });
 
+const appData = Object.preventExtensions({
+  theme: localStorage.getItem("theme") ?? Theme.Light,
+  withSymbols: false,
+  withNumbers: false,
+});
+
 let passwordLength = PASSWORD_LENGTH.MIN;
+let toastTimerID = -1;
+
+themeToggle.addEventListener("click", (event) => {
+  if (!appData.theme) {
+    appData.theme = Theme.Dark;
+  } else {
+    if (appData.theme == Theme.Dark) appData.theme = Theme.Light;
+    else appData.theme = Theme.Dark;
+  }
+  localStorage.setItem("theme", appData.theme);
+  render();
+});
+
+symbolsToggle.addEventListener(
+  "change",
+  () => (appData.withSymbols = appData.withSymbols ? false : true)
+);
+
+numbersToggle.addEventListener(
+  "change",
+  () => (appData.withNumbers = appData.withNumbers ? false : true)
+);
 
 passwordLengthInput.addEventListener("input", (event) => {
   const value = event.target.value;
@@ -60,7 +92,6 @@ passwordBlocks.forEach((block) => {
   });
 });
 
-let toastTimerID = -1;
 function showPasswordCopiedToast(cursor) {
   if (toastTimerID) clearTimeout(toastTimerID);
   setPasswordCopiedToastPosition(cursor, true);
@@ -100,6 +131,7 @@ function render() {
     count++;
   }
   passwordLengthInput.value = passwordLength;
+  document.querySelector("html").setAttribute("class", appData.theme);
 }
 
 render();
