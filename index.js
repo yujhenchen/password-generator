@@ -79,7 +79,12 @@ GeneratePasswordsBtn.addEventListener("click", () => {
   const pwdLength = +passwordLength;
 
   for (const property in pwdSet) {
-    pwdSet[property] = getRandomElementsFromArray([...characters], pwdLength);
+    pwdSet[property] = getRandomElementsFromArray(
+      [...characters],
+      pwdLength,
+      appData.withSymbols,
+      appData.withNumbers
+    );
   }
   render();
 });
