@@ -27,11 +27,11 @@
   </head>
   <body class="bg-brand-dark flex place-content-center items-center">
     <main
-      class="bg-brand-green-very-very-light dark:bg-brand-green-very-heavy h-550px w-550px px-52px py-115px"
+      class="bg-brand-green-very-very-light dark:bg-brand-green-very-heavy h-550px w-550px px-52px py-115px relative"
     >
       <section
         id="light-dark-mode-toggle-section"
-        class="dark:text-brand-coco-medium text-brand-coco-heavy flex place-content-end items-center"
+        class="dark:text-brand-coco-medium text-brand-coco-heavy flex place-content-end items-center space-x-4px absolute right-4 top-4 text-sm"
       >
         <span>Dark Mode</span>
         <label class="switch" for="toggle-light-dark">
@@ -53,8 +53,8 @@
           Never use an insecure password again.
         </h2>
 
-        <section class="text-[16px] flex flex-col py-16px space-y-8px">
-          <div>
+        <section class="text-[16px] flex flex-col py-32px space-y-8px text-sm">
+          <div class="flex">
             <label
               for="password-length-input"
               class="dark:text-brand-coco-medium text-brand-coco-heavy"
@@ -65,12 +65,13 @@
               inputmode="numeric"
               maxlength="2"
               id="password-length-input"
+              class="dark:text-brand-green-light"
             />
           </div>
 
-          <div class="flex w-full space-x-8px">
+          <div class="flex w-full space-x-16px">
             <div
-              class="dark:text-brand-coco-medium text-brand-coco-heavy flex items-center"
+              class="dark:text-brand-coco-medium text-brand-coco-heavy flex items-center space-x-4px"
             >
               <span class="dark:text-brand-coco-medium text-brand-coco-heavy"
                 >With symbols</span
@@ -87,7 +88,7 @@
             </div>
 
             <div
-              class="dark:text-brand-coco-medium text-brand-coco-heavy flex items-center"
+              class="dark:text-brand-coco-medium text-brand-coco-heavy flex items-center space-x-4px"
             >
               <span class="dark:text-brand-coco-medium text-brand-coco-heavy"
                 >With numbers</span
