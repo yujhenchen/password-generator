@@ -20,6 +20,10 @@ const themeToggle = document.querySelector("#toggle-light-dark");
 const symbolsToggle = document.querySelector("#toggle-symbols");
 const numbersToggle = document.querySelector("#toggle-numbers");
 
+const toggleLightDarkIcon = document.querySelector("#toggle-light-dark-icon");
+const lightModeIcon = `<i class="fa-solid fa-sun"></i>`;
+const darkModeIcon = `<i class="fa-solid fa-moon"></i>`;
+
 const pwdSet = Object.preventExtensions({
   first: "",
   second: "",
@@ -132,6 +136,8 @@ function render() {
   }
   passwordLengthInput.value = passwordLength;
   document.querySelector("html").setAttribute("class", appData.theme);
+  toggleLightDarkIcon.innerHTML =
+    appData.theme === Theme.Dark ? lightModeIcon : darkModeIcon;
 }
 
 render();

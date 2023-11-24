@@ -149,12 +149,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [x] Show ellipsis when there is text overflow
 - [x] Copy on click
 - [x] Added toast to notify that the password has been copied to the clipboard (`setTimeout` and `clearTimeout` to control the display of the toast)
-- [ ] Toggle mode light/ dark theme, store in the localStorage
+- [x] Toggle mode light/ dark theme, store in the localStorage
 - [ ] Toggle symbols on/ off
 - [ ] Toggle numbers on/ off
 - [ ] Refactor
     - [ ] Create a UnoCSS class file to load class names
     - [ ] Move out event handler functions
+    - [ ] Project structure best practice
     
 See the [open issues](https://github.com/yujhenchen/password-generator/issues) for a full list of proposed features (and known issues).
 
