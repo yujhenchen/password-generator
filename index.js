@@ -16,12 +16,12 @@ import {
 } from "./helper.js";
 import appData from "./store.js";
 
-const passwordLengthInput = document.getElementById("password-length-input");
-const GeneratePasswordsBtn = document.getElementById("generate-passwords-btn");
-const passwordBlocks = document.querySelectorAll(
-  "div[class*='password-block']"
+const passwordLengthInput = document.querySelector("#password-length-input");
+const generatePasswordsButton = document.querySelector(
+  "#generate-passwords-btn"
 );
-const passwordCopiedToast = document.getElementById("pop-up-toast");
+const passwordBlocks = document.querySelectorAll("div[id*='password-block-']");
+const passwordCopiedToast = document.querySelector("#pop-up-toast");
 const themeToggle = document.querySelector("#toggle-light-dark");
 const symbolsToggle = document.querySelector("#toggle-symbols");
 const numbersToggle = document.querySelector("#toggle-numbers");
@@ -68,7 +68,7 @@ passwordLengthInput.addEventListener("focusout", (event) => {
   render();
 });
 
-GeneratePasswordsBtn.addEventListener("click", () => {
+generatePasswordsButton.addEventListener("click", () => {
   const newPasswords = [];
   const filteredArray = getFilteredArray(
     [...characters],
