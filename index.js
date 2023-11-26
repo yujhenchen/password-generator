@@ -7,9 +7,13 @@ import {
   PASSWORD_COPIED_RESULT_MESSAGE,
   UNIT_PIXEL,
   Theme,
+  characters,
 } from "./constants.js";
-import { characters } from "./constants.js";
-import { getFilteredArray, getRandomElementsFromArray } from "./helper.js";
+import {
+  getFilteredArray,
+  getRandomElementsFromArray,
+  debounce,
+} from "./helper.js";
 import appData from "./store.js";
 
 const passwordLengthInput = document.getElementById("password-length-input");
@@ -26,7 +30,8 @@ const toggleLightDarkIcon = document.querySelector("#toggle-light-dark-icon");
 const lightModeIcon = `<i class="fa-solid fa-sun"></i>`;
 const darkModeIcon = `<i class="fa-solid fa-moon"></i>`;
 
-let toastTimerID = -1;
+// debounce
+const showPasswordCopiedToast = debounce(hideToast, POPUP_DISPLAY_TIME);
 
 themeToggle.addEventListener("click", () => {
   if (appData.theme === Theme.Dark) appData.theme = Theme.Light;
@@ -88,17 +93,12 @@ passwordBlocks.forEach((block) => {
       x: event.clientX,
       y: event.clientY,
     };
-    showPasswordCopiedToast(cursor);
+
+    showToast(cursor);
+    showPasswordCopiedToast();
     render();
   });
 });
-
-function showPasswordCopiedToast(cursor) {
-  if (toastTimerID) clearTimeout(toastTimerID);
-  showToast(cursor);
-
-  toastTimerID = setTimeout(() => hideToast(), POPUP_DISPLAY_TIME);
-}
 
 function showToast(cursor) {
   const { x, y } = cursor;
@@ -133,12 +133,9 @@ function renderTheme() {
 }
 
 function render() {
-  let count = 0;
-
   renderTheme();
-  appData.passwords.forEach((pwd) => {
-    passwordBlocks[count].textContent = pwd;
-    count++;
+  appData.passwords.forEach((pwd, index) => {
+    passwordBlocks[index].textContent = pwd;
   });
 
   passwordLengthInput.value = appData.passwordLength;

@@ -23,3 +23,13 @@ export const getRandomElementsFromArray = (arr, length) => {
 
 export const isValidThemeValue = (themeValue) =>
   themeValue !== Theme.Light || themeValue !== Theme.Dark;
+
+export function debounce(func, timeout) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func(...args);
+    }, timeout);
+  };
+}
