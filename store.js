@@ -10,6 +10,7 @@ class AppData {
   #_passwords = [];
   #_themeKey = "theme";
   #_passwordLength = PASSWORD_LENGTH.MIN;
+  #_toastMessage = "";
   #_rules;
   //   #_toastTimerID;
 
@@ -65,6 +66,14 @@ class AppData {
 
   set passwords(arr) {
     this.#_passwords = arr;
+  }
+
+  get toastMessage() {
+    return this.#_toastMessage;
+  }
+
+  set toastMessage(msg) {
+    this.#_toastMessage = msg;
   }
 
   initPasswordArray() {

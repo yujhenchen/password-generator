@@ -88,6 +88,7 @@ passwordBlocks.forEach((block) => {
       y: event.clientY,
     };
     showPasswordCopiedToast(cursor);
+    render();
   });
 });
 
@@ -105,21 +106,22 @@ function setPasswordCopiedToastPosition(cursor, show) {
   const unit = "px";
   if (show) {
     const { x, y } = cursor;
-    passwordCopiedToast.style.top = `${x + POPUP_TOAST_POSITION.show}${unit}`;
-    passwordCopiedToast.style.left = `${y + POPUP_TOAST_POSITION.show}${unit}`;
+    passwordCopiedToast.style.top = `${y + POPUP_TOAST_POSITION.show}${unit}`;
+    passwordCopiedToast.style.left = `${x + POPUP_TOAST_POSITION.show}${unit}`;
   } else {
     passwordCopiedToast.style.top =
       passwordCopiedToast.style.left = `${POPUP_TOAST_POSITION.hide}${unit}`;
   }
-  render();
 }
 
 async function clickAndCopy(text) {
   try {
-    await navigator.clipboard.writeText(text);
-    console.log(`${PASSWORD_COPIED_RESULT_MESSAGE.SUCCEED}: ${text}`);
+    if (text) {
+      await navigator.clipboard.writeText(text);
+      appData.toastMessage = `${PASSWORD_COPIED_RESULT_MESSAGE.SUCCEED}: ${text}`;
+    } else appData.toastMessage = "Please generate Passwords first!";
   } catch (err) {
-    console.error(`${PASSWORD_COPIED_RESULT_MESSAGE.FAILED}: ${err}`);
+    appData.toastMessage = `${PASSWORD_COPIED_RESULT_MESSAGE.FAILED}: ${err}`;
   }
 }
 
@@ -132,12 +134,14 @@ function renderTheme() {
 function render() {
   let count = 0;
 
+  renderTheme();
   appData.passwords.forEach((pwd) => {
     passwordBlocks[count].textContent = pwd;
     count++;
   });
+
   passwordLengthInput.value = appData.passwordLength;
-  renderTheme();
+  passwordCopiedToast.textContent = appData.toastMessage;
 }
 
 render();
