@@ -9,6 +9,7 @@ import {
 } from "./constants.js";
 import { characters } from "./constants.js";
 import { getRandomElementsFromArray } from "./helper.js";
+import appData from "./store.js";
 
 const passwordLengthInput = document.getElementById("password-length-input");
 const GeneratePasswordsBtn = document.getElementById("generate-passwords-btn");
@@ -24,68 +25,56 @@ const toggleLightDarkIcon = document.querySelector("#toggle-light-dark-icon");
 const lightModeIcon = `<i class="fa-solid fa-sun"></i>`;
 const darkModeIcon = `<i class="fa-solid fa-moon"></i>`;
 
-const pwdSet = Object.preventExtensions({
-  first: "",
-  second: "",
-});
-
-const appData = Object.preventExtensions({
-  theme: localStorage.getItem("theme") ?? Theme.Light,
-  withSymbols: false,
-  withNumbers: false,
-});
-
-let passwordLength = PASSWORD_LENGTH.MIN;
 let toastTimerID = -1;
 
-themeToggle.addEventListener("click", (event) => {
-  if (!appData.theme) {
-    appData.theme = Theme.Dark;
-  } else {
-    if (appData.theme == Theme.Dark) appData.theme = Theme.Light;
-    else appData.theme = Theme.Dark;
-  }
-  localStorage.setItem("theme", appData.theme);
+themeToggle.addEventListener("click", () => {
+  if (appData.theme === Theme.Dark) appData.theme = Theme.Light;
+  else appData.theme = Theme.Dark;
   render();
 });
 
 symbolsToggle.addEventListener(
   "change",
-  () => (appData.withSymbols = appData.withSymbols ? false : true)
+  () => (appData.rules.withSymbols = !appData.rules.withSymbols)
 );
 
 numbersToggle.addEventListener(
   "change",
-  () => (appData.withNumbers = appData.withNumbers ? false : true)
+  () => (appData.rules.withNumbers = !appData.rules.withNumbers)
 );
 
 passwordLengthInput.addEventListener("input", (event) => {
   const value = event.target.value;
+
   if (isNaN(value)) {
-    passwordLength = PASSWORD_LENGTH.MIN;
+    appData.passwordLength = PASSWORD_LENGTH.MIN;
     passwordLengthInput.value = "";
-  } else passwordLength = value;
+  } else appData.passwordLength = value;
   render();
 });
 
 passwordLengthInput.addEventListener("focusout", (event) => {
   const value = event.target.value;
-  if (value > PASSWORD_LENGTH.MAX) passwordLength = PASSWORD_LENGTH.MAX;
-  else if (value < PASSWORD_LENGTH.MIN) passwordLength = PASSWORD_LENGTH.MIN;
+
+  if (value > PASSWORD_LENGTH.MAX) appData.passwordLength = PASSWORD_LENGTH.MAX;
+  else if (value < PASSWORD_LENGTH.MIN)
+    appData.passwordLength = PASSWORD_LENGTH.MIN;
   render();
 });
 
 GeneratePasswordsBtn.addEventListener("click", () => {
-  const pwdLength = +passwordLength;
-
-  for (const property in pwdSet) {
-    pwdSet[property] = getRandomElementsFromArray(
-      [...characters],
-      pwdLength,
-      appData.withSymbols,
-      appData.withNumbers
+  const newPasswords = [];
+  for (let i = 0; i < appData.passwords.length; i += 1) {
+    newPasswords.push(
+      getRandomElementsFromArray(
+        [...characters],
+        appData.passwordLength,
+        appData.rules.withSymbols,
+        appData.rules.withNumbers
+      )
     );
   }
+  appData.passwords = newPasswords;
   render();
 });
 
@@ -133,16 +122,21 @@ async function clickAndCopy(text) {
   }
 }
 
-function render() {
-  let count = 0;
-  for (const property in pwdSet) {
-    passwordBlocks[count].textContent = pwdSet[property];
-    count++;
-  }
-  passwordLengthInput.value = passwordLength;
+function renderTheme() {
   document.querySelector("html").setAttribute("class", appData.theme);
   toggleLightDarkIcon.innerHTML =
     appData.theme === Theme.Dark ? lightModeIcon : darkModeIcon;
+}
+
+function render() {
+  let count = 0;
+
+  appData.passwords.forEach((pwd) => {
+    passwordBlocks[count].textContent = pwd;
+    count++;
+  });
+  passwordLengthInput.value = appData.passwordLength;
+  renderTheme();
 }
 
 render();
