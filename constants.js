@@ -10,6 +10,8 @@ export const POPUP_TOAST_POSITION = Object.freeze({
   hide: -999,
 });
 
+export const UNIT_PIXEL = "px";
+
 export const POPUP_DISPLAY_TIME = 1500;
 
 export const PASSWORD_COPIED_RESULT_MESSAGE = Object.freeze({

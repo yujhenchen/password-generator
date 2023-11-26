@@ -5,6 +5,7 @@ import {
   POPUP_TOAST_POSITION,
   POPUP_DISPLAY_TIME,
   PASSWORD_COPIED_RESULT_MESSAGE,
+  UNIT_PIXEL,
   Theme,
 } from "./constants.js";
 import { characters } from "./constants.js";
@@ -94,24 +95,24 @@ passwordBlocks.forEach((block) => {
 
 function showPasswordCopiedToast(cursor) {
   if (toastTimerID) clearTimeout(toastTimerID);
-  setPasswordCopiedToastPosition(cursor, true);
+  showToast(cursor);
 
-  toastTimerID = setTimeout(
-    () => setPasswordCopiedToastPosition(cursor, false),
-    POPUP_DISPLAY_TIME
-  );
+  toastTimerID = setTimeout(() => hideToast(), POPUP_DISPLAY_TIME);
 }
 
-function setPasswordCopiedToastPosition(cursor, show) {
-  const unit = "px";
-  if (show) {
-    const { x, y } = cursor;
-    passwordCopiedToast.style.top = `${y + POPUP_TOAST_POSITION.show}${unit}`;
-    passwordCopiedToast.style.left = `${x + POPUP_TOAST_POSITION.show}${unit}`;
-  } else {
-    passwordCopiedToast.style.top =
-      passwordCopiedToast.style.left = `${POPUP_TOAST_POSITION.hide}${unit}`;
-  }
+function showToast(cursor) {
+  const { x, y } = cursor;
+  passwordCopiedToast.style.top = `${
+    y + POPUP_TOAST_POSITION.show
+  }${UNIT_PIXEL}`;
+  passwordCopiedToast.style.left = `${
+    x + POPUP_TOAST_POSITION.show
+  }${UNIT_PIXEL}`;
+}
+
+function hideToast() {
+  passwordCopiedToast.style.top =
+    passwordCopiedToast.style.left = `${POPUP_TOAST_POSITION.hide}${UNIT_PIXEL}`;
 }
 
 async function clickAndCopy(text) {
