@@ -12,7 +12,6 @@ class AppData {
   #_passwordLength = PASSWORD_LENGTH.MIN;
   #_toastMessage = "";
   #_rules;
-  //   #_toastTimerID;
 
   constructor() {
     if (instance) {
@@ -81,12 +80,6 @@ class AppData {
       this.#_passwords.push("");
     }
   }
-
-  //   showPasswordCopiedToast(func) {
-  //     if (this.#_toastTimerID) clearTimeout(toastTimerID);
-  //     func();
-  //     this.#_toastTimerID = setTimeout(() => func(), POPUP_DISPLAY_TIME);
-  //   }
 }
 
 const appData = Object.freeze(new AppData());
