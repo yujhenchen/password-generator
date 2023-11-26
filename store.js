@@ -27,11 +27,7 @@ class AppData {
 
   get theme() {
     const theme = localStorage.getItem(this.#_themeKey);
-    if (!theme) {
-      localStorage.setItem(this.#_themeKey, Theme.Light);
-      return Theme.Light;
-    }
-    if (!isValidThemeValue(theme)) {
+    if (!theme || !isValidThemeValue(theme)) {
       localStorage.setItem(this.#_themeKey, Theme.Light);
       return Theme.Light;
     }
