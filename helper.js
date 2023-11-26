@@ -1,25 +1,25 @@
-export function getRandomElementsFromArray(
-  arr,
-  length,
-  withSymbols,
-  withNumbers
-) {
-  if (!withSymbols && !withNumbers) arr = arr.filter((ele) => isLetter(ele));
-  else if (!withSymbols) arr.filter((ele) => isNumberOrLetter(ele));
-  else if (!withNumbers) arr = arr.filter((ele) => !isNumber(ele));
+"use strict";
 
-  const shuffled = arr.sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, length).join("");
-}
+import { Theme } from "./constants.js";
 
-export function isNumberOrLetter(char) {
-  return /[^A-Za-z0-9]/g.test(char);
-}
+export const isNumberOrLetter = (char) => /[A-Za-z0-9]/g.test(char);
 
-export function isNumber(char) {
-  return /^\d+$/g.test(char);
-}
+export const isNumber = (char) => /[0-9]/g.test(char);
 
-export function isLetter(char) {
-  return /^[a-zA-Z]$/g.test(char);
-}
+export const isLetter = (char) => /[a-zA-Z]/g.test(char);
+
+export const getFilteredArray = (arr, withSymbols, withNumbers) => {
+  if (!withSymbols && !withNumbers) return arr.filter((ele) => isLetter(ele));
+  else if (!withSymbols) return arr.filter((ele) => isNumberOrLetter(ele));
+  else if (!withNumbers) return arr.filter((ele) => !isNumber(ele));
+  return arr;
+};
+
+export const getRandomElementsFromArray = (arr, length) => {
+  if (arr && arr.length > 0)
+    return arr.sort(() => 0.5 - Math.random()).slice(0, length);
+  return [];
+};
+
+export const isValidThemeValue = (themeValue) =>
+  themeValue !== Theme.Light || themeValue !== Theme.Dark;

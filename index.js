@@ -8,7 +8,7 @@ import {
   Theme,
 } from "./constants.js";
 import { characters } from "./constants.js";
-import { getRandomElementsFromArray } from "./helper.js";
+import { getFilteredArray, getRandomElementsFromArray } from "./helper.js";
 import appData from "./store.js";
 
 const passwordLengthInput = document.getElementById("password-length-input");
@@ -64,14 +64,15 @@ passwordLengthInput.addEventListener("focusout", (event) => {
 
 GeneratePasswordsBtn.addEventListener("click", () => {
   const newPasswords = [];
+  const filteredArray = getFilteredArray(
+    [...characters],
+    appData.rules.withSymbols,
+    appData.rules.withNumbers
+  );
+
   for (let i = 0; i < appData.passwords.length; i += 1) {
     newPasswords.push(
-      getRandomElementsFromArray(
-        [...characters],
-        appData.passwordLength,
-        appData.rules.withSymbols,
-        appData.rules.withNumbers
-      )
+      getRandomElementsFromArray(filteredArray, appData.passwordLength).join("")
     );
   }
   appData.passwords = newPasswords;
