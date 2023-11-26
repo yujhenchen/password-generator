@@ -31,7 +31,7 @@ const lightModeIcon = `<i class="fa-solid fa-sun"></i>`;
 const darkModeIcon = `<i class="fa-solid fa-moon"></i>`;
 
 // debounce
-const showPasswordCopiedToast = debounce(hideToast, POPUP_DISPLAY_TIME);
+const hidePasswordCopiedToast = debounce(hideToast, POPUP_DISPLAY_TIME);
 
 themeToggle.addEventListener("click", () => {
   if (appData.theme === Theme.Dark) appData.theme = Theme.Light;
@@ -95,7 +95,7 @@ passwordBlocks.forEach((block) => {
     };
 
     showToast(cursor);
-    showPasswordCopiedToast();
+    hidePasswordCopiedToast();
     render();
   });
 });
