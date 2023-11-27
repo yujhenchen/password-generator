@@ -32,21 +32,6 @@ button {
   border: none;
 }
 
-span,
-.password-block {
-  vertical-align: middle;
-  /* overflow text shows ... */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 h1 {
   font-family: "Karla", sans-serif;
-}
-
-.pwd-div-style {
-  display: flex;
-  place-content: center;
-  align-items: center;
 }
