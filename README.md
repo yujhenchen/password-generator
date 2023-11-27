@@ -75,7 +75,7 @@
 ## About The Project
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-My solo project - Password Generator (from The Frontend Developer Career Path of Scrimba).
+My solo project - Password Generator. Built with Vanilla JavaScript and is powered by the Figma design resources from The Frontend Developer Career Path on Scrimba. Some additional features: apply the singleton design pattern to manage application data as well as getters and setters; use the countdown function of setTimeout to hide the pop-up toast after a given time, use the debounce mechanism; switch to light/dark mode, and Store in localStorage to preserve user preference mode; toggle switch to include/exclude special characters/numbers in passwords.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -152,10 +152,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [x] Toggle mode light/ dark theme, store in the localStorage
 - [x] Toggle symbols on/ off
 - [x] Toggle numbers on/ off
-- [ ] Refactor
-    - [ ] Create a UnoCSS class file to load class names
-    - [ ] Move out event handler functions
-    - [ ] Project structure best practice
+- [x] Refactor    
+    - [x] Apply Singleton Pattern for app data 
+    - [x] Increase code consistency by using the same selector querySelector
+    - [x] Clean up classes in styles.css, move all non-default classes to index.html
+- [x] Bug fixes
+    - [x] Fix password copy toast position incorrect
     
 See the [open issues](https://github.com/yujhenchen/password-generator/issues) for a full list of proposed features (and known issues).
 
@@ -233,6 +235,7 @@ Project Link: [https://github.com/yujhenchen/password-generator](https://github.
 * [Simple CSS3 Toggle Switch Button](https://www.htmllion.com/css3-toggle-switch-button.html)
 * [How to Copy Text to the Clipboard with JavaScript](https://www.freecodecamp.org/news/copy-text-to-clipboard-javascript/)
 * [The best light/dark mode theme toggle in JavaScript](https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f)
+* [Scrimba](https://scrimba.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
