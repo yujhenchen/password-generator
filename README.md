@@ -158,6 +158,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [x] Clean up classes in styles.css, move all non-default classes to index.html
 - [x] Bug fixes
     - [x] Fix password copy toast position incorrect
+- [x] Enhancement
+    - [x] Click very fast become user select, set CSS user-select to none
     
 See the [open issues](https://github.com/yujhenchen/password-generator/issues) for a full list of proposed features (and known issues).
 
